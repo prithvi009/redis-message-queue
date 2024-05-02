@@ -84,9 +84,6 @@ func OpenConnectionWithRedisClient(tag string, redisClient redis.Cmdable, errCha
 
 // OpenConnectionWithTestRedisClient opens and returns a new connection which
 // uses a test redis client internally. This is useful in integration tests.
-func OpenConnectionWithTestRedisClient(tag string, errChan chan<- error) (Connection, error) {
-	return OpenConnectionWithRmqRedisClient(tag, NewTestRedisClient(), errChan)
-}
 
 // OpenConnectionWithRmqRedisClient: If you would like to use a redis client other than the ones
 // supported in the constructors above, you can implement the RedisClient interface yourself
